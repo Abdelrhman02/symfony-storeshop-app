@@ -2,7 +2,17 @@
 
 namespace App\Controller;
 
-class MainController
-{
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
 
+class MainController extends AbstractController
+{
+    #[Route('/')]
+    public function homepage(): Response
+    {
+        $counter = 12;
+
+        return $this->render('main/homepage.html.twig',['counter' =>  $counter]);
+    }
 }

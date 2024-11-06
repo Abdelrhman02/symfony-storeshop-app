@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{#{% block title %}That's Awesome Feature! {% endblock %}#}
+{% block title %}{{ parent() }}   That's Awesome Feature! {% endblock %}
+
+{% block body %}
+    <h1>here is the body content</h1>
+{% endblock %}
