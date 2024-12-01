@@ -4,5 +4,14 @@
 {% block title %}{{ parent() }}   That's Awesome Feature! {% endblock %}
 
 {% block body %}
-    <h1>here is the body content</h1>
+    <h1>Check our amazing products list</h1>
+    <ul>
+        {% for product in products %}
+            <li>Name: {{ product.getName }}</li>
+            <li>Price: {{ product.getPrice }}</li>
+            <li><a href="{{ path('app_magento_products_show', {id: product.getId()}) }}">{{ product.sku }}</a></li>
+            <hr>
+        {% endfor %}
+    </ul>
+
 {% endblock %}

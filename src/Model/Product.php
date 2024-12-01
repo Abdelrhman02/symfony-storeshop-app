@@ -8,9 +8,11 @@ class Product
     private int $price;
     private string $sku;
     private int $qty;
+    private int $id;
 
-    public function __construct(string $name, int $price, string $sku, int $qty)
+    public function __construct(int $id,string $name, int $price, string $sku, int $qty)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->price = $price;
         $this->sku = $sku;
@@ -73,6 +75,16 @@ class Product
     public function setName(string $name): void
     {
         $this->name = $name;
+    }
+
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
 

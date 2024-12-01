@@ -14,14 +14,27 @@ class ProductsRepository
         $this->logger = $logger;
     }
 
+    public function find($id)
+    {
+        $products = $this->findAll();
+
+        foreach ($products as $product) {
+            if ($product->getId() === $id) {
+                return $product;
+            }
+        }
+
+        return 'Product Does Not Exist .';
+    }
+
     public function findAll(): array
     {
         $this->logger->info('Get Products Data');
 
         return [
-            new Product(name: "product1", price: 10, sku: "EG-192-250", qty: 10),
-            new Product(name: "product2", price: 11, sku: "EG-192-250", qty: 5),
-            new Product(name: "product3", price: 12, sku: "EG-192-250", qty: 1)
+            new Product(id: 1, name: "product1", price: 10, sku: "EG-192-250", qty: 10),
+            new Product(id: 2, name: "product2", price: 11, sku: "EG-192-250", qty: 5),
+            new Product(id: 3, name: "product3", price: 12, sku: "EG-192-250", qty: 1)
         ];
     }
 
