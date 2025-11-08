@@ -12,5 +12,9 @@
 ###> php-cs-fixer/shim ###
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
-/.idea/
 ###< php-cs-fixer/shim ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor
+###< symfony/asset-mapper ###
